@@ -7,8 +7,15 @@ const ingredients = [
   'Condiments',
 ];
 
-const ulEl = document.querySelector('#ingredients');
+const listRef = document.querySelector('#ingredients');
+const array = [];
 
-const list = ingredients.reduce((str, item) => str + `<li>${item}</li>`, '');
+ingredients.map(ingredient => { 
+    let item = document.createElement('li');
+    item.textContent = ingredient;
+    item.classList.add('item');
+    array.push(item);
+})
 
-ulEl.innerHTML = list;
+listRef.append(...array)
+console.log(listRef)

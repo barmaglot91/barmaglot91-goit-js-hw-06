@@ -6,18 +6,18 @@ function onLoginForm(event) {
     const email = formElements.email.value;
     const password = formElements.password.value;
 
+    if (email === '' || password === '') {
+        alert('Пусто')
+        form.reset();
+        return
+    }
+
     const formData = {
         email: email,
         password: password
     }
     console.log(formData)
     form.reset()
-    
-    if (email === '' || password === '') {
-        alert('Пусто')
-        form.reset();
-        return
-    }
 }
 
 form.addEventListener('submit', onLoginForm)
